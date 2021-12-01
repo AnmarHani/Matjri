@@ -1,31 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@500&family=Lateef&display=swap');
 
 :root{
-  --logo-color:#582F0E; /* logo text color */
+  --logo-color:#0a9396; /* logo text color */
 
-  --primary-bg: #7F4F24; /* body bg color */
-  --secondary-bg: #936639; /* any other div/form/container/scroll bg color */
+  --primary-bg: #001219; /* body bg color */
+  --secondary-bg: #005f73; /* any other div/form/container/scroll bg color */
   
-  --primary-bg-hover: #A68A64; /* usually not used (bcuz body bg is not hoverable)*/
-  --secondary-bg-hover: #A68A64; /* any other div/form/container/scroll bg on hover */
+  --primary-bg-hover: #0a9396; /* usually not used (bcuz body bg is not hoverable)*/
+  --secondary-bg-hover: #0a9396; /* any other div/form/container/scroll bg on hover */
   
-  --primary-text-color:#B6AD90; /*any other text */
-  --primary-text-color-hover:#656D4A; /*any other text on hover */
+  --primary-text-color:#0a9396; /*any other text */
+  --primary-text-color-hover:#e9d8a6; /*any other text on hover */
   
-  --secondary-text-color:#414833; /*input text color*/
-  --secondary-text-color-hover:#B6AD90; /*input text color on hover*/
+  --secondary-text-color:#0a9396; /*input text color*/
+  --secondary-text-color-hover:#e9d8a6; /*input text color on hover*/
 
-  --btn-bg-color:#C2C5AA; /*used alil bit (bcuz most btns/links bg are borders)*/
-  --btn-bg-color-hover:#333D29; /*button/link background color on hover*/
+  --btn-bg-color:#ee9b00; /*used alil bit (bcuz most btns/links bg are borders)*/
+  --btn-bg-color-hover:#9b2226; /*button/link background color on hover*/
   
   --input-bg-color:white; /*input background color*/
-  --input-bg-color-hover:gray; /*input background color on hover*/
+  --input-bg-color-hover:#e9d8a6; /*input background color on hover*/
 
-  --primary-other-color:#656D4A; /*primary borders colors*/
-  --primary-other-color-hover:#333D29;
+  --primary-other-color:#005f73; /*primary borders colors*/
+  --primary-other-color-hover:#005f73;/*usually not used*/
 
-  --secondary-other-color:#333D29; /*other/temporary borders or anything else colors*/
-  --secondary-other-color-hover:#C2C5AA;/*usually not used*/
+  --secondary-other-color:#005f73; /*other/temporary borders or anything else colors*/
+  --secondary-other-color-hover:#005f73;/*usually not used*/
 }
 
 ::-webkit-scrollbar {
