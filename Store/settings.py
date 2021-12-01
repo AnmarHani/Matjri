@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&yq+k6*c1oy!ydor3$@$y9o9r)c=h$wjc$e4(g6o9t5=gruq7k'
+SECRET_KEY = 'HIDDEN'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['HIDDEN']
 
 
 # Application definition
@@ -81,19 +81,7 @@ WSGI_APPLICATION = 'Store.wsgi.application'
 
 DATABASES = {
     'default': {
-
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
-        'NAME': 'd3btnl1qd9b59c',
-
-        'USER': 'vvqxwgkfbejfvg',
-
-        'PASSWORD': 'b3a4f6c76da1ae60b53dde2e1a008ff0ce133abceb303e74ac8e3a9438ac6120',
-
-        'HOST': 'ec2-176-34-105-15.eu-west-1.compute.amazonaws.com',
-
-        'PORT': '5432',
-
+        'HIDDEN'
     }
 }
 
@@ -147,18 +135,18 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = BASE_DIR / "media"
-MEDIA_URL = "/files/" #anything... it will be served in the url
+MEDIA_URL = "/files/" 
 
 LOGIN_URL = '/login/'
 
-AWS_S3_REGION_NAME = 'eu-central-1' # Your region name
+AWS_S3_REGION_NAME = 'HIDDEN'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
-AWS_ACCESS_KEY_ID = 'AKIAVBSVBROSREPSGDHQ'
-AWS_SECRET_ACCESS_KEY = 'tgVErGnI2pBL+vGOKEihBphPp60Ik+cibmwEg5ak'
-AWS_STORAGE_BUCKET_NAME = 'django-store-v1-bucket'
+AWS_ACCESS_KEY_ID = 'HIDDEN'
+AWS_SECRET_ACCESS_KEY = 'HIDDEN'
+AWS_STORAGE_BUCKET_NAME = 'HIDDEN'
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'HIDDEN'
