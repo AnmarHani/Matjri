@@ -9,7 +9,7 @@
   --primary-bg-hover: #0a9396; /* usually not used (bcuz body bg is not hoverable)*/
   --secondary-bg-hover: #0a9396; /* any other div/form/container/scroll bg on hover */
   
-  --primary-text-color:#0a9396; /*any other text */
+  --primary-text-color:#f1faee; /*any other text */
   --primary-text-color-hover:#e9d8a6; /*any other text on hover */
   
   --secondary-text-color:#0a9396; /*input text color*/
