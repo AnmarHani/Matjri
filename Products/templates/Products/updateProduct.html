@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% block nav %}
+<h1></h1>
+{% endblock %}
+<div>
+    <h1>تعديل المنتج</h1>
+<form action="{% url 'productUpdate' product.id %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="image">الصورة</label>
+    {{form.image}}
+    <label for="title">العنوان*</label>
+    {{form.title}}
+    <label for="description">الوصف*</label>
+    {{form.description}}
+    <label for="stock">الكمية (صفر للطلب المسبق)*</label>
+    {{form.stock}}
+    <label for="price">السعر*</label>
+    {{form.price}}
+    <label for="location">الموقع\المنطقة*</label>
+    {{form.location}}
+    <label for="payment_type">طريقة الدفع المقبولة*</label>
+    {{form.payment_type}}
+    <label for="delivery_type">طريقة التوصيل*</label>
+    {{form.delivery_type}}
+    {% for message in messages %}
+        {% if message.tags == 'error' %}
+        <p class="error">{{message}}</p>
+        {% endif %}
+    {% endfor %}
+    <input type="submit" value="تعديل">
+</form> 
+</div>
+{% endblock %}
+{% block footer %}
+<h1></h1>
+{% endblock %}

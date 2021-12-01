@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for message in messages %}
+    {% if message.tags == 'success' %}
+    <p class="success">{{message}}</p>
+    {% endif %}
+{% endfor %}
+<div>
+    <h1>متجر {{profile.username}}</h1>
+    {% if profile.image %}
+    <img class="profile-img" src="{{profile.image.url}}" alt="" srcset="">
+    {% endif %}
+</div>
+<h3> الوصف: {{profile.description}}</h3>
+<h3>عدد المتابعين: {{followers}}</h3>
+<div class="btn-container">
+{% if request.user in profile.followers.all %}
+<a class="btn" href="{% url 'follow' profile.id %}">الغاء المتابعة</a>
+{% else %}
+<a class="btn" href="{% url 'follow' profile.id %}">متابعة</a>
+{% endif %}
+{% if profile.username == request.user %}
+    <a class="btn" href="{% url 'createProfile' %}">تعديل الحساب</a>
+{% endif %}
+</div>
+    <h1>المنتجات</h1>
+    {% if products %}
+    <div class="product-grid">
+        {% for product in products %}
+            <a href="{% url 'productGet' product.id %}">
+                <div class="product">
+                    {% if product.image %}
+                    <img class="product-img" src="{{ product.image.url }}">
+                    {% endif %}
+                    <h1>{{product.title}}</h1>
+                    <h3></h3>
+                    <h3>الاعجابات:{{product.likes.count}}</h3>
+                    <h3>السعر:{{product.price}} ريال </h3>
+                    <h3>البائع: {{product.seller}}</h3>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <h2>لم يتم اضافة اي منتج بعد.</h2>
+    {% endif %}
+{% endblock %}

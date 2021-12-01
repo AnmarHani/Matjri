@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for message in messages %}
+    {% if message.tags == 'success' %}
+    <p class="success">{{message}}</p>
+    {% endif %}
+{% endfor %}
+<h1>جميع المتاجر</h1>
+<h3 class="span">الترتيب: من الاعلى في عدد المتابعين الى الاقل في عدد المتابعين</h3>
+<div class="user-container">
+{% for user in users %}
+<a href="{% url 'userProfile' user.id %}">
+    <div class="user">
+        <div>
+            {% if user.image %}
+                <img class="profile-img" src="{{ user.image.url }}">
+            {% endif %}
+        <h2>متجر {{user.username}}</h2>
+        </div>
+        <h3>عدد المتابعين: {{user.followers.count}}</h3>
+        <h3>عدد المنتجات: {{user.username.seller.all.count}}</h3>
+    </div>
+</a>
+{% endfor %}
+</div>
+{% for message in messages %}
+    <p>{{message}}</p>
+{% endfor %}
+{% endblock %}

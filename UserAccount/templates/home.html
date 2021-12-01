@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+    Document
+{% endblock %}
+{% block content %}
+{% block nav %}
+<h1></h1>
+{% endblock %}
+<br>
+<br>
+<br>
+<br>
+<h1>” صنع المتاجر اصبح سهلا, اصنع متجرك الان! ”</h1>
+<div class="btn-container">
+    {% if request.user.is_authenticated %}
+    <a class="btn" href="{% url 'product_index' %}">ابدأ الان!</a>
+    {% else %}
+    <a class="btn" href="{% url 'register' %}">تسجيل جديد</a>
+    <a class="btn" href="{% url 'login' %}">لدي حساب</a>
+    {% endif %}
+</div>
+{% endblock %}

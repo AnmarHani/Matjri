@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% block nav %}
+<h1></h1>
+{% endblock %}
+{% for message in messages %}
+    {% if message.tags == 'success' %}
+    <p class="success">{{message}}</p>
+    {% endif %}
+{% endfor %}
+    <div>
+        <h1>تسجيل دخول</h1>
+        <a href="{% url 'register' %}">ليس لدي حساب</a>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="username">اسم المستخدم*</label>
+            <p>{{form.username}}</p>
+            <label for="username">كلمة المرور*</label>
+            {{form.password}}
+            
+            {% for message in messages %}
+                {% if message.tags == 'error' %}
+                <p class="error">{{message}}</p>
+                {% endif %}
+            {% endfor %}
+            <input type="submit" value="تسجيل دخول">
+        </form>
+    </div>
+{% endblock %}
+{% block footer %}
+<h1></h1>
+{% endblock %}

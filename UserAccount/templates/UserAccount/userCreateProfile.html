@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% block nav %}
+<h1></h1>
+{% endblock %}
+<div>
+    <h1>المتجر</h1>
+    <form action="/createProfile/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="image">الصورة</label>
+        {{form.image}}
+        <label for="description">الوصف*</label>
+        {{form.description}}
+        {% for message in messages %}
+        <p>{{message}}</p>
+        {% endfor %}
+        <input type="submit" value="متابعة">
+    </form>
+</div>
+{% endblock %}
+{% block footer %}
+<h1></h1>
+{% endblock %}

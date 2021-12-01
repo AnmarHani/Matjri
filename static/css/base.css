@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@500&family=Lateef&display=swap');
+
+:root{
+  --logo-color:#582F0E; /* logo text color */
+
+  --primary-bg: #7F4F24; /* body bg color */
+  --secondary-bg: #936639; /* any other div/form/container/scroll bg color */
+  
+  --primary-bg-hover: #A68A64; /* usually not used (bcuz body bg is not hoverable)*/
+  --secondary-bg-hover: #A68A64; /* any other div/form/container/scroll bg on hover */
+  
+  --primary-text-color:#B6AD90; /*any other text */
+  --primary-text-color-hover:#656D4A; /*any other text on hover */
+  
+  --secondary-text-color:#414833; /*input text color*/
+  --secondary-text-color-hover:#B6AD90; /*input text color on hover*/
+
+  --btn-bg-color:#C2C5AA; /*used alil bit (bcuz most btns/links bg are borders)*/
+  --btn-bg-color-hover:#333D29; /*button/link background color on hover*/
+  
+  --input-bg-color:white; /*input background color*/
+  --input-bg-color-hover:gray; /*input background color on hover*/
+
+  --primary-other-color:#656D4A; /*primary borders colors*/
+  --primary-other-color-hover:#333D29;
+
+  --secondary-other-color:#333D29; /*other/temporary borders or anything else colors*/
+  --secondary-other-color-hover:#C2C5AA;/*usually not used*/
+}
+
+::-webkit-scrollbar {
+    width: calc(100vw/150);
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--primary-bg); 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--secondary-bg); 
+    border-radius: 20px;
+    transition: all ease-in-out;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-bg-hover); 
+  }
+
+body{
+    background-color: var(--primary-bg);
+    text-align: center;
+    overflow-x: hidden;
+    color: var(--primary-text-color);
+    font-size: calc(100vw/80);
+    font-family: 'El Messiri', sans-serif;
+  }
+
+
+a{
+  text-decoration: none;
+  color: var(--primary-text-color);
+  transition: all 0.6s;
+}
+
+a:hover{
+  color: var(--primary-text-color-hover);
+  text-decoration: underline;
+}
+
+.btn-container{
+  margin: auto;
+  align-items: center;
+  margin-top: calc(100vw/15);
+  border-bottom: var(--primary-other-color) solid 5px;
+  padding-bottom: calc(100vw/15);
+  max-width: 70%;
+}
+
+.btn-container a{
+  top: 0;
+  position: relative;
+  border: var(--primary-other-color) solid 3px !important;
+  border-radius: 10px;
+  padding: 20px;
+  color: var(--primary-text-color);
+  transition: all 0.6s;
+  margin: 15px;
+}
+.btn-container a:hover{
+  color: var(--primary-text-color-hover);
+  top:-5px;
+  background-color: var(--btn-bg-color-hover);
+}
+
+.product-grid{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(auto-fit, auto);
+    margin: auto;
+    grid-gap: calc(100vw/50);
+  }
+
+.product{
+    top: 0;
+    position: relative;
+    word-break: break-all;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    border: var(--primary-other-color) solid 3px;
+    border-radius: 20px;
+    padding: 15px;
+    margin: auto;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, auto) ;
+    grid-template-rows: repeat(2, auto);
+    transition: all 0.6s;
+}
+.product:hover{
+    color: var(--primary-text-color-hover);
+    top: -5px;
+    background-color: var(--btn-bg-color-hover);
+  }
+.user-container{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(auto-fit, auto);
+    margin: auto;
+    grid-gap: calc(100vw/70);
+  }
+
+.user{
+    top: 0;
+    position: relative;
+    word-break: break-all;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    border: var(--primary-other-color) solid 3px;
+    border-radius: 20px;
+    padding: 15px;
+    margin: auto;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, auto) ;
+    grid-template-rows: repeat(2, auto);
+    transition: all 0.6s;
+}
+.user:hover{
+    color: var(--primary-text-color-hover);
+    top: -5px;
+    background-color: var(--btn-bg-color-hover);
+}
+
+
+.profile-img{
+  object-fit:cover;
+  height: 50px;
+  width: 50px;
+  border: var(--secondary-other-color) solid 4px;
+  border-radius: 60%;
+  padding: 0;
+  margin: 0;
+}
+.logo-img{
+  object-fit:cover;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  margin: 0;
+}
+.product-img{
+  object-fit:cover;
+  height: calc(100vw/4);
+  width: calc(100vw/4);
+  border: var(--secondary-other-color) solid 4px;
+  border-radius: 20%;
+  padding: 0;
+  margin: 0;
+}
+
+.product-detail-container{
+  display: grid;
+  max-width: 100%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  word-break: break-all;
+  grid-template-columns: repeat(4, auto) ;
+  grid-template-rows: repeat(2, auto);
+  grid-column-gap: calc(100vw/10);
+}
+
+
+.product-detail-container .product-img{
+  height: calc(100vw/3);
+  width: calc(100vw/3);
+  margin: auto;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+
+form{
+  position: relative;
+  border: 5px solid var(--primary-other-color);
+  border-radius: 20px;
+  padding: 50px;
+  max-width: 50%;
+  margin: auto;
+  margin-top: 10%;
+  background-color: var(--secondary-bg);
+}
+input{
+  color: var(--secondary-text-color);
+  text-align: center;
+  position: relative;
+  top: 0;
+  width: 70%;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: all 0.6s;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: var(--input-bg-color);
+}
+input:hover{
+  color: var(--secondary-text-color-hover);
+  top: -5px;
+  background-color: var(--input-bg-color-hover);
+  
+}
+input:focus{
+  background-color: var(--input-bg-color-hover);
+}
+label{
+  display: block;
+}
+textarea {
+  text-align: center;
+  position: relative;
+  top: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: all 0.6s;
+  width: 70%;
+  height: 150px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: var(--input-bg-color);
+  resize: none;
+  border: none;
+}
+textarea:hover {
+  top: -5px;
+  border-radius: 4px;
+  background-color: var(--input-bg-color-hover);
+  font-size: 16px;
+  resize: none;
+}
+input[type='file']::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input[type='file'] {
+  display: inline-block;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 8px;
+  cursor: pointer;
+  background-color: var(--btn-bg-color);
+}
+input[type='file']:hover {
+  background-color: var(--btn-bg-color-hover);
+}
+
+input[type='submit'] {
+  max-width: 35%;
+  margin: auto;
+  margin-top: 25px;
+  background-color: var(--btn-bg-color);
+}
+input[type='submit']:hover {
+  background-color: var(--btn-bg-color-hover);
+  cursor: pointer;
+}
+
+.nav-container{
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 20px;
+  padding-bottom: 30px;
+  border-bottom: var(--primary-other-color) solid 4px;
+  max-width: 95%;
+  margin:auto;
+  padding-top: 15px;
+  margin-bottom: 30px;
+}
+.nav-container li{
+  list-style: none;
+}
+.logo{
+  margin-left: calc(100vw/2.3);
+  margin-right: calc(100vw/40);
+  display: inline-block;
+}
+.logo-text{
+  display: block;
+  color: var(--logo-color);
+  font-size: calc(100vw/70);
+}
+
+.active{
+  border-bottom: var(--secondary-other-color) solid 2px;
+}
+
+.footer{
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  border-top: var(--primary-other-color) solid 5px;
+  max-width: 70%;
+  margin: auto;
+}
+
+.span{
+  margin: auto;
+  max-width: 50%;
+  border: var(--primary-other-color) 3px solid;
+  margin-bottom: 30px;
+}
+
+.error{
+  display: block;
+  max-width: 50%;
+  margin: auto;
+  background-color: #f28482;
+  border-radius: 5%;
+  color: white;
+  padding: 15px;
+}
+.success{
+  display: block;
+  max-width: 50%;
+  margin: auto;
+  background-color: #99d98c;
+  border-radius: 5%;
+  color: white;
+  padding: 15px;
+}
+
+
+@media (max-width: 900px) {
+  .product-grid { grid-template-columns: repeat(1, auto) ;}
+  body{    font-size: calc(100vw/45);}
+  .nav-container{
+    column-gap: calc(100vw/40);
+  }
+  .nav-container .logo{
+    margin-left: calc(100vw/5);
+    margin-right: 0;
+  }
+  .user .profile-img{
+    display: none;
+  }
+  .btn-container a{
+    padding: calc(100vw/95);
+    color: black;
+    transition: all 0.6s;
+    margin: calc(100vw/100);
+  }
+}

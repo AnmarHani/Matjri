@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Home {% endblock %}</title>
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    {% block style %} {% endblock %}
+</head>
+<body>
+    {% block nav %}
+    <nav>
+        <ul class="nav-container">  
+            <div class="logo">
+                <li> 
+                    <img class="logo-img" src="{% static 'logo.png' %}">
+                    <span class="logo-text">
+                        منصة متجري
+                    </span>
+                </li> 
+            </div>  
+            {% if request.get_full_path == "/products/" %}
+            <li class="active"><a href="{% url 'product_index' %}">المنتجات</a></li>
+            <li><a href="{% url 'user_index' %}">المتاجر</a></li>
+            {% elif request.get_full_path == "/users/"%}  
+            <li><a href="{% url 'product_index' %}">المنتجات</a></li>
+            <li class="active"><a href="{% url 'user_index' %}">المتاجر</a></li>  
+            {% elif request.get_full_path == "/users/"%}  
+            {% else %}
+            <li><a href="{% url 'product_index' %}">المنتجات</a></li>
+            <li><a href="{% url 'user_index' %}">المتاجر</a></li>  
+            {% endif %}
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'userProfile' request.user.user_profile.id %}">متجر {{request.user.username}}</a></li>  
+            <li>
+                <a href="{% url 'logout' %}">تسجيل الخروج</a>
+            </li>                  
+            {% endif %}
+        </ul>  
+    </nav>
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+{% block footer %}
+<div class="footer">
+    <h4>حقوق النشر أنمار 2021 &copy;</h4>
+    <h4><a href="{% url 'notYet' %}">مساعدة</a></h4>
+    <h4><a href="{% url 'notYet' %}">عن المتجر</a></h4>
+</div>
+{% endblock %}
+</body>
+</html>

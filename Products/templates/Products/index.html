@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for message in messages %}
+    {% if message.tags == 'success' %}
+    <p class="success">{{message}}</p>
+    {% endif %}
+{% endfor %}
+<h1>جميع المنتجات</h1>
+<h3 class="span">الترتيب: من الاعلى اعجابا الى الاقل اعجابا</h3>
+<div class="product-grid">
+{% for product in products %}
+<a href="{% url 'productGet' product.id %}">
+    <div class="product">
+        {% if product.image %}
+        <img class="product-img" src="{{ product.image.url }}">
+        {% endif %}
+        <h1>{{product.title}}</h1>
+        <h3></h3>
+        <h3>الاعجابات:{{product.likes.count}}</h3>
+        <h3>السعر:{{product.price}} ريال </h3>
+        <h3>البائع: {{product.seller}}</h3>
+        </div>
+    </a>
+{% endfor %}
+</div>    
+{% for message in messages %}
+        <p>{{message}}</p>
+    {% endfor %}
+{% endblock %}

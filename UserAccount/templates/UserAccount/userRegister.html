@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% block nav %}
+<h1></h1>
+{% endblock %}
+<div>
+    <h1>تسجيل جديد</h1>
+    <a href="{% url 'login' %}">لدي حساب</a>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="username">(سيكون اسم المتجر) اسم المستخدم*</label>
+        {{form.username}}
+        <label for="password1">كلمة المرور*</label>
+        {{form.password1}}
+        <label for="password2">تأكيد كلمة المرور*</label>
+        {{form.password2}}
+        <ul>
+            تأكد من:
+            <li>كلمة المرور لا تقل عن 8 خانات</li>
+            <li> كلمة المرور يجب ان لا تكون معروفة او بسيطة</li>
+            <li>كلمة المرور يجب ان لا تكون متشابهة مع اسم المستخدم</li>
+        </ul>
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+            <p class="error">{{message}}</p>
+            {% endif %}
+        {% endfor %}
+        <input type="submit" value="تسجيل">
+    </form>
+</div>
+{% endblock %}
+{% block footer %}
+<h1></h1>
+{% endblock %}
