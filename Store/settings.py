@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -80,8 +81,19 @@ WSGI_APPLICATION = 'Store.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'd3btnl1qd9b59c',
+
+        'USER': 'vvqxwgkfbejfvg',
+
+        'PASSWORD': 'b3a4f6c76da1ae60b53dde2e1a008ff0ce133abceb303e74ac8e3a9438ac6120',
+
+        'HOST': 'ec2-176-34-105-15.eu-west-1.compute.amazonaws.com',
+
+        'PORT': '5432',
+
     }
 }
 
@@ -138,3 +150,15 @@ MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/files/" #anything... it will be served in the url
 
 LOGIN_URL = '/login/'
+
+AWS_S3_REGION_NAME = 'eu-central-1' # Your region name
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+
+AWS_ACCESS_KEY_ID = 'AKIAVBSVBROSREPSGDHQ'
+AWS_SECRET_ACCESS_KEY = 'tgVErGnI2pBL+vGOKEihBphPp60Ik+cibmwEg5ak'
+AWS_STORAGE_BUCKET_NAME = 'django-store-v1-bucket'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
