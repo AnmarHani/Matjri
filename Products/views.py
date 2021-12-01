@@ -51,6 +51,7 @@ def productGetPage(request, id):
     }
 
     return render(request,"Products/productDetail.html", context)
+    
 @login_required
 def productCreatePage(request):
     form = forms.ProductForm()
@@ -87,6 +88,7 @@ def productCreatePage(request):
         'form': form,
     }
     return render(request,"Products/createProduct.html", context)
+
 @login_required
 def productUpdatePage(request, id):
     product = models.Product.objects.get(id=id)
