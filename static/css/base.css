@@ -15,7 +15,7 @@
   --secondary-text-color:#0a9396; /*input text color*/
   --secondary-text-color-hover:#e9d8a6; /*input text color on hover*/
 
-  --btn-bg-color:#9a8c98; /*used alil bit (bcuz most btns/links bg are borders)*/
+  --btn-bg-color:#283618; /*used alil bit (bcuz most btns/links bg are borders)*/
   --btn-bg-color-hover:#4a4e69; /*button/link background color on hover*/
   
   --input-bg-color:white; /*input background color*/
@@ -368,8 +368,10 @@ input[type='submit']:hover {
   }
   .btn-container a{
     padding: calc(100vw/95);
-    color: black;
     transition: all 0.6s;
     margin: calc(100vw/100);
+  }
+  .user-container h2{
+    display: block;
   }
 }
