@@ -357,7 +357,7 @@ input[type='submit']:hover {
   .product-grid { grid-template-columns: repeat(1, auto) ;}
   body{    font-size: calc(100vw/45);}
   .nav-container{
-    column-gap: calc(100vw/40);
+    column-gap: calc(100vw/50);
   }
   .nav-container .logo{
     margin-left: calc(100vw/5);
@@ -371,7 +371,12 @@ input[type='submit']:hover {
     transition: all 0.6s;
     margin: calc(100vw/100);
   }
-  .user-container h2{
-    display: block;
+  .user{
+    padding: 25px;
+}
+  .user h2 {
+    position:absolute;
+    top:calc(100vw/-35);
+    margin-right:calc(100vw/70);
   }
 }
