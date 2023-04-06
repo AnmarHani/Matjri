@@ -5,7 +5,7 @@
 - منصة متجري
  
 # URL Demo:
-- https://django-store-v1.herokuapp.com/
+- Closed.
 
  # URL API:
 - NONE
